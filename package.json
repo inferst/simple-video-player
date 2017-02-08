@@ -1,0 +1,35 @@
+{
+  "name": "simple-video-player",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js"
+  },
+  "author": "Mikhail Morozov",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/material-ui": "^0.16.49",
+    "@types/react": "^15.0.6",
+    "@types/react-dom": "^0.14.22",
+    "@types/react-redux": "^4.4.36",
+    "@types/react-tap-event-plugin": "0.0.30",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.28.0",
+    "style-loader": "^0.13.1",
+    "typescript": "^2.1.5",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "material-ui": "^0.16.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0"
+  }
+}

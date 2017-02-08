@@ -1,0 +1,10 @@
+video {
+    width: 100%;
+    max-width: 452px;
+    height: auto;
+}
+
+.player {
+    max-width: 452px;
+    margin: 0 auto;
+}
