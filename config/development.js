@@ -7,7 +7,7 @@ module.exports = {
         path.resolve('./src/index.tsx')
     ],
     output: {
-        path: path.resolve('./dist/'),
+        path: path.resolve('./build/'),
         filename: 'bundle.js',
         publicPath: '/'
     },
