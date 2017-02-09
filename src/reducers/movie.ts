@@ -1,10 +1,12 @@
+import {IState, ISelectedMovie} from '../interfaces/movie';
+
 interface Action {
     type: string;
-    selected: number
+    selected: ISelectedMovie;
 }
 
-const initialState = {
-    movies: [
+const initialState: IState = {
+    items: [
         {
             id: 1,
             title: 'Movie 1',
@@ -42,31 +44,33 @@ const initialState = {
             poster: 'http://camendesign.com/code/video_for_everybody/poster.jpg'
         }
     ],
-    show: false,
-    selected: 0
+    selected: {
+        title: '',
+        url: ''
+    },
+    showPlayer: false
 };
 
-const player = (state = initialState, action: Action) => {
+const movie = (state = initialState, action: Action) => {
     switch (action.type) {
         case 'SELECT_MOVIE': {
             return {
                 ...state,
-                selected: action.selected,
-                show: true
+                selected: action.selected
             };
         }
 
         case 'SHOW_PLAYER': {
             return {
                 ...state,
-                show: true
+                showPlayer: true
             };
         }
 
         case 'HIDE_PLAYER': {
             return {
                 ...state,
-                show: false
+                showPlayer: false
             };
         }
 
@@ -76,4 +80,4 @@ const player = (state = initialState, action: Action) => {
     }
 };
 
-export default player;
+export default movie;
