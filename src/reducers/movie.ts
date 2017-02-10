@@ -11,7 +11,7 @@ const initialState: IState = {
             id: 1,
             title: 'Movie 1',
             url: 'https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv',
-            poster: 'http://camendesign.com/code/video_for_everybody/poster.jpg'
+            poster: 'https://archive.org/download/WebmVp8Vorbis/webmvp8.gif'
         },
         {
             id: 2,
@@ -28,8 +28,8 @@ const initialState: IState = {
         {
             id: 4,
             title: 'Movie 4',
-            url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-            poster: 'http://camendesign.com/code/video_for_everybody/poster.jpg'
+            url: 'https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv',
+            poster: 'https://archive.org/download/WebmVp8Vorbis/webmvp8.gif'
         },
         {
             id: 5,
@@ -40,8 +40,8 @@ const initialState: IState = {
         {
             id: 6,
             title: 'Movie 6',
-            url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-            poster: 'http://camendesign.com/code/video_for_everybody/poster.jpg'
+            url: 'https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv',
+            poster: 'https://archive.org/download/WebmVp8Vorbis/webmvp8.gif'
         }
     ],
     selected: {
