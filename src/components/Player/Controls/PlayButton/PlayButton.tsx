@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FlatButton from 'material-ui/FlatButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
 
 interface PlayPauseButtonProps {
     played: boolean;
@@ -8,17 +8,16 @@ interface PlayPauseButtonProps {
 
 class PlayButton extends React.Component<PlayPauseButtonProps, {}> {
     render() {
-        let icon = <i className="material-icons">play_circle_filled</i>;
+        let icon = <i className="material-icons">play_arrow</i>;
 
         if (this.props.played) {
-            icon = <i className="material-icons">pause_circle_filled</i>;
+            icon = <i className="material-icons">pause</i>;
         }
 
         return (
-            <FlatButton
-                onClick={this.props.onClick.bind(this, !this.props.played)}
-                icon={icon}
-            />
+            <FloatingActionButton mini={true} onClick={this.props.onClick.bind(this, !this.props.played)}>
+                {icon}
+            </FloatingActionButton>
         );
     }
 }

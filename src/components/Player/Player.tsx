@@ -5,6 +5,8 @@ import Video from './Video/Video';
 import PlayButton from './Controls/PlayButton/PlayButton';
 import Preloader from './Controls/Preloader/Preloader';
 
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+
 import * as styles from './Player.css';
 
 interface PlayerProps {
@@ -90,6 +92,10 @@ class Player extends React.Component<PlayerProps, PlayerState> {
         });
     }
 
+    fullscreen() {
+        this.video.fullscreen();
+    }
+
     video?: Video;
 
     render() {
@@ -102,8 +108,20 @@ class Player extends React.Component<PlayerProps, PlayerState> {
                     onLoadedData={this.loaded.bind(this)}
                     ref={(video) => {this.video = video}}
                 />
-                <Slider onChange={this.changeProgress.bind(this)} value={this.state.progress} />
-                <PlayButton played={this.state.played} onClick={this.togglePlay.bind(this)} />
+                <div className={styles.controls}>
+                    <div className={styles.playButton}>
+                        <PlayButton played={this.state.played} onClick={this.togglePlay.bind(this)} />
+                    </div>
+                    <div className={styles.progress}>
+                        <div><Slider onChange={this.changeProgress.bind(this)} value={this.state.progress} /></div>
+                    </div>
+                    <div className={styles.fullscreenButton}>
+                        <FloatingActionButton mini={true} onClick={this.fullscreen.bind(this)}>
+                            <i className="material-icons">fullscreen</i>
+                        </FloatingActionButton>
+                    </div>
+                </div>
+
             </div>
         );
     }

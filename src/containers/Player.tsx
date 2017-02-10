@@ -3,7 +3,7 @@ import {Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import {IState} from '../interfaces/state';
 import {hidePlayer} from '../actions';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Player from '../components/Player/Player';
 
 interface PlayerProps {
@@ -16,7 +16,8 @@ class PlayerContainer extends React.Component<PlayerProps, {}> {
         return (
             <div>
                 <Player url={this.props.url} />
-                <FlatButton
+                <RaisedButton
+                    primary={true}
                     onClick={() => this.props.dispatch(hidePlayer())}
                     label="Back to movies"
                 />

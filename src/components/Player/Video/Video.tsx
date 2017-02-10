@@ -7,6 +7,10 @@ interface VideoProps {
     url: string;
 }
 
+interface CrossBrowserHTMLVideoElement extends HTMLVideoElement {
+    mozRequestFullScreen(): void;
+}
+
 class Video extends React.Component<VideoProps, {}> {
     timeUpdate() {
         const value = this.inputs.video.currentTime / this.inputs.video.duration;
@@ -25,8 +29,18 @@ class Video extends React.Component<VideoProps, {}> {
         this.inputs.video.pause();
     }
 
+    fullscreen() {
+        if (this.inputs.video.requestFullscreen) {
+            this.inputs.video.requestFullscreen();
+        } else if (this.inputs.video.mozRequestFullScreen) {
+            this.inputs.video.mozRequestFullScreen();
+        } else if (this.inputs.video.webkitRequestFullscreen) {
+            this.inputs.video.webkitRequestFullscreen();
+        }
+    }
+
     inputs: {
-        video?: HTMLVideoElement
+        video?: CrossBrowserHTMLVideoElement
     } = {};
 
     render() {
@@ -36,7 +50,7 @@ class Video extends React.Component<VideoProps, {}> {
                 onLoadedData={this.props.onLoadedData.bind(this)}
                 onTimeUpdate={this.timeUpdate.bind(this)}
                 autoPlay={true}
-                ref={(video: HTMLVideoElement) => {this.inputs.video = video}}
+                ref={(video: CrossBrowserHTMLVideoElement) => {this.inputs.video = video}}
             >
                 <source src={this.props.url} />
             </video>
